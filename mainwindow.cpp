@@ -47,8 +47,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Accuracy_sliderMoved(int position)
 {
-    ui->dBox->setValue(Accuracy_);
-    on_dBox_valueChanged(double(position)/double(ui->Accuracy->maximum()));
+    double value = double(position)/double(ui->Accuracy->maximum());
+    ui->dBox->setValue(value);
+    on_dBox_valueChanged(value);
 }
 
 void MainWindow::on_dBox_valueChanged(double arg1)
@@ -70,6 +71,11 @@ void MainWindow::on_bCycle_clicked()
         Spec s = q.GetSpecie();
         ui->Graph->graph(1)->addData(QVector<double>::fromStdVector(s.x),QVector<double>::fromStdVector(s.y));
         ui->Graph->replot();
+        if(count>150)
+        {
+            QMessageBox::information(NULL, "Error!", "To many iterations! Try to reduce accuracy");
+            break;
+        }
     }
 }
 
@@ -90,6 +96,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_Accuracy_valueChanged(int value)
 {
-    Accuracy_ = static_cast<double>(value)/ui->Accuracy->maximum();
-    ui->dBox->setValue(Accuracy_);
+    double val = double(value)/double(ui->Accuracy->maximum());
+    Accuracy_ = val;
+    ui->dBox->setValue(val);
 }
