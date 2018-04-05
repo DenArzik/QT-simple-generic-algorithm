@@ -56,7 +56,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Точность</string>
+     <string>Accuracy</string>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="dBox">
@@ -85,7 +85,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Построить</string>
+     <string>Adjust</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -98,7 +98,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Шаг</string>
+     <string>Step</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -111,7 +111,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Итераций:</string>
+     <string>Iterations</string>
     </property>
    </widget>
    <widget class="QLabel" name="LIterations">
